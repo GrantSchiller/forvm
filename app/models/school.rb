@@ -8,6 +8,7 @@
 #  longitude  :float
 #  created_at :datetime
 #  updated_at :datetime
+#  city_id    :integer
 #
 
 class School < ActiveRecord::Base
@@ -15,6 +16,7 @@ class School < ActiveRecord::Base
   before_validation :geocode, :if => :name_changed?
   
   has_many :users
+  belongs_to :city
   
   validates :name, :presence => true
   validates :latitude, :presence => true

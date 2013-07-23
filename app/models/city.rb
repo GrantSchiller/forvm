@@ -15,6 +15,7 @@ class City < ActiveRecord::Base
   before_validation :geocode, :if => :name_changed?
   
   has_many :users
+  has_many :school
   
   validates :name, :presence => true
   validates :latitude, :presence => true

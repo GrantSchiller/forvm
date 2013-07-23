@@ -8,6 +8,7 @@
 #  longitude  :float
 #  created_at :datetime
 #  updated_at :datetime
+#  city_id    :integer
 #
 
 require 'spec_helper'
