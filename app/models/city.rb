@@ -17,7 +17,7 @@ class City < ActiveRecord::Base
   has_many :users
   has_many :school
   
-  validates :name, :presence => true
+  validates :name, :presence => true, :uniqueness => true
   validates :latitude, :presence => true
   validates :longitude, :presence => true
 end

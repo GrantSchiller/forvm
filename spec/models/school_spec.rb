@@ -21,6 +21,11 @@ describe School do
       FactoryGirl.build(:school, :name => nil).should_not be_valid
     end
     
+    it "requires a unique name" do
+      s = FactoryGirl.create(:school)
+      FactoryGirl.build(:school, :name => s.name).should_not be_valid
+    end
+    
   end
   
   it "generates latitude and longitude from name" do
