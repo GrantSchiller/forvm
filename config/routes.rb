@@ -1,10 +1,9 @@
-Forvm::Application.routes.draw do  
-  get "sessions/new"
-  get "sessions/create"
-  get "sessions/destroy"
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
+Forvm::Application.routes.draw do
+  
+  get '/login', to: 'sessions#new'
+  get '/logout', to: 'sessions#destroy'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -57,3 +56,9 @@ Forvm::Application.routes.draw do
   #     resources :products
   #   end
 end
+#== Route Map
+# Generated on 23 Jul 2013 19:22
+#
+#  login GET      /login(.:format)                   sessions#new
+# logout GET      /logout(.:format)                  sessions#destroy
+#        GET|POST /auth/:provider/callback(.:format) sessions#create
