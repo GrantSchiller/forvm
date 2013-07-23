@@ -18,6 +18,8 @@ group :production do
 	gem 'pg'
 end
 
+gem 'geocoder'
+
 gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
