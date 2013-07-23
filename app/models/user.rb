@@ -9,10 +9,12 @@
 #  updated_at      :datetime
 #  school_id       :integer
 #  graduating_year :integer
+#  city_id         :integer
 #
 
 class User < ActiveRecord::Base
   belongs_to :school
+  belongs_to :city
   has_many :authentications, :dependent => :destroy
   has_and_belongs_to_many :skills
   

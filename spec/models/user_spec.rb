@@ -9,6 +9,7 @@
 #  updated_at      :datetime
 #  school_id       :integer
 #  graduating_year :integer
+#  city_id         :integer
 #
 
 require 'spec_helper'
