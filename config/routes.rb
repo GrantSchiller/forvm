@@ -1,5 +1,7 @@
 Forvm::Application.routes.draw do
   
+  root to: "pages#home"
+  
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
