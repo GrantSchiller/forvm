@@ -10,4 +10,10 @@
 #
 
 class User < ActiveRecord::Base
+  has_many :authentications, :dependent => :destroy
+  
+  has_and_belongs_to_many :skills
+  
+  validates :email, :allow_blank => true, :format => { :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]+\z/, :message => "must be a valid email address" }
+  validates :name, :presence => true
 end
