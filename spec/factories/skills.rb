@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :skill do
-    name "life"
+    sequence :name do |n|
+      "skill-#{n}"
+    end
   end
 end

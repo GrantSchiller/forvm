@@ -2,7 +2,9 @@
 
 FactoryGirl.define do
   factory :school do
-    name "University of Pennsylvania"
+    sequence :name do |n|
+      "University Number #{n}"
+    end
     latitude 39.9503816
     longitude -75.1966437
   end
