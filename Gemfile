@@ -3,14 +3,15 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 gem 'rails', '4.0.0'
 
+gem 'rspec-rails'
+gem 'factory_girl_rails'
+gem 'webrat'
+
 group :development, :test do
   gem 'sqlite3'
   
   gem 'annotate'
-  gem 'rspec-rails'
   gem 'fuubar'
-  gem 'factory_girl_rails'
-  gem 'webrat'
 end
 
 group :production do
