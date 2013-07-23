@@ -11,5 +11,13 @@
 require 'spec_helper'
 
 describe Skill do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe "validation" do
+    
+    it "requires a name" do
+      FactoryGirl.build(:skill, :name => nil).should_not be_valid
+    end
+    
+  end
+  
 end

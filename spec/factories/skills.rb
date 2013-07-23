@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :skill do
-    name "MyString"
+    name "life"
   end
 end

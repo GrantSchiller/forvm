@@ -13,5 +13,17 @@
 require 'spec_helper'
 
 describe Authentication do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe "validation" do
+    
+    it "requires a provider" do
+      FactoryGirl.build(:authentication, :provider => nil).should_not be_valid
+    end
+    
+    it "requires a uid" do
+      FactoryGirl.build(:authentication, :provider => nil).should_not be_valid
+    end
+    
+  end
+  
 end

@@ -12,5 +12,31 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  describe "validation" do
+    
+    it "requires a name" do
+      FactoryGirl.build(:user, :name => nil).should_not be_valid
+    end
+    
+    it "doesn't require an email" do
+      FactoryGirl.build(:user, :email => nil).should be_valid
+    end
+    
+    it "accepts valid emails" do
+      emails = %w[user@foo.com THE_USER@foo.bar.org first.last@foo.jp]
+      emails.each do |a|
+        FactoryGirl.build(:user, :email => a).should be_valid
+      end
+    end
+    
+    it "rejects invalid emails" do
+      emails = %w[user@foo,com user_at_foo.org example.user@foo.]
+      emails.each do |a|
+        FactoryGirl.build(:user, :email => a).should_not be_valid
+      end
+    end
+    
+  end
+  
 end
