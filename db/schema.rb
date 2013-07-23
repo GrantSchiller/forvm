@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130723131417) do
+ActiveRecord::Schema.define(version: 20130723134328) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20130723131417) do
     t.float    "latitude"
     t.float    "longitude"
   end
+
+  add_index "users", ["latitude", "longitude"], name: "index_users_on_latitude_and_longitude"
 
   create_table "users_skills", force: true do |t|
     t.integer "user_id"
