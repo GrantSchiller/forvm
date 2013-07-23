@@ -11,5 +11,5 @@
 class Skill < ActiveRecord::Base
   has_and_belongs_to_many :users
   
-  validates :name, :presence => true
+  validates :name, :presence => true, :format => { :with => /\A[A-Za-z\d_-]+\z/, :message => "must be alphanumerical" }, :uniqueness => { :case_sensitive => true }
 end
