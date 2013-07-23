@@ -7,6 +7,9 @@
 #  email      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  address    :string(255)
+#  latitude   :float
+#  longitude  :float
 #
 
 require 'spec_helper'

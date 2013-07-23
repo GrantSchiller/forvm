@@ -7,9 +7,15 @@
 #  email      :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  address    :string(255)
+#  latitude   :float
+#  longitude  :float
 #
 
 class User < ActiveRecord::Base
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
+  
   has_many :authentications, :dependent => :destroy
   
   has_and_belongs_to_many :skills
