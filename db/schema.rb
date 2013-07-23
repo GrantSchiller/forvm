@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130723134328) do
+ActiveRecord::Schema.define(version: 20130723153516) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id"
     t.string   "provider"
     t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,12 +40,9 @@ ActiveRecord::Schema.define(version: 20130723134328) do
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
+    t.integer  "school_id"
+    t.integer  "graduating_year"
   end
-
-  add_index "users", ["latitude", "longitude"], name: "index_users_on_latitude_and_longitude"
 
   create_table "users_skills", force: true do |t|
     t.integer "user_id"
