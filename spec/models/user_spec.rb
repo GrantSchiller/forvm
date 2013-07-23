@@ -2,14 +2,13 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#  address    :string(255)
-#  latitude   :float
-#  longitude  :float
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  email           :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  school_id       :integer
+#  graduating_year :integer
 #
 
 require 'spec_helper'
