@@ -11,13 +11,7 @@
 #
 
 class City < ActiveRecord::Base
-  geocoded_by :name
-  before_validation :geocode, :if => :name_changed?
+  include Location
   
-  has_many :users
-  has_many :school
-  
-  validates :name, :presence => true, :uniqueness => true
-  validates :latitude, :presence => true
-  validates :longitude, :presence => true
+  has_many :schools
 end
