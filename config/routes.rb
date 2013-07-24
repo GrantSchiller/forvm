@@ -6,6 +6,8 @@ Forvm::Application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   
+  get 'search', to: 'search#index'
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
