@@ -8,6 +8,21 @@
 </head>
 <body>
 
+<header id="navigation">
+	<div class="group">
+		<h1><%= link_to "Forvm", root_url %></h1>
+		<ul id="options">
+			<% if current_user %>
+				<li class="name"><%= link_to current_user.name, user_url(current_user) %></li>
+				<li><%= link_to "Log out", logout_url %>
+			<% else %>
+				<li><%= link_to "Log in", login_url %></li>
+				<li><%= link_to "Sign up", login_url %></li>
+			<% end %>
+		</ul>
+	</div>
+</header>
+
 <div id="main">
 <%= yield %>
 </div>

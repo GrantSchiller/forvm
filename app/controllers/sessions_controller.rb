@@ -27,14 +27,13 @@ class SessionsController < ApplicationController
       
       sign_in user
       
-      # TODO: redirect to page to fill in user details
       flash[:notice] = "Account created, now fill in the rest of your details:"
-      redirect_to root_url
+      redirect_to edit_user_url(user)
     end
   end
 
   def destroy
-    sign_out user
+    sign_out
     
     flash[:notice] = "Signed out"
     redirect_to root_url

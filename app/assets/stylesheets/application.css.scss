@@ -47,3 +47,58 @@ label, input[type=button], input[type=submit], button { cursor: pointer; }
 img, object, embed {
 	max-width: 100%;
 }
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+$color: #70F0EE;
+$deep: #4580BD;
+$background: #78818A;
+$alternate: #F2BCAD;
+$deep_alternate: #BD4E45;
+
+#navigation {
+//	height: 40px;
+	padding: 14px 0;
+	background-color: $background;
+	
+	div {
+		width: 50%;
+		margin: 0 auto;
+		
+		h1 {
+			float: left;
+			font-weight: bold;
+			a, a:visited {
+				color: $color;
+			}
+			a:hover, a:visited:hover {
+				color: #fff;
+			}
+		}
+		
+		a, a:visited {
+			color: #fff;
+			text-decoration: none;
+			font-size: 12px;
+		}
+		
+		a:hover, a:visited:hover {
+			color: $color;
+		}
+		
+		ul {
+			float: right;
+			
+			li {
+				display: inline;
+				margin-left: 5px;
+			}
+			
+			.name a, .name a:visited {
+				color: $alternate;
+			}
+		}
+	}
+}
