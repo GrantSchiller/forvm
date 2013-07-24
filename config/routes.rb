@@ -3,6 +3,7 @@ Forvm::Application.routes.draw do
   root to: "pages#home"
   
   resources :users, only: [:show, :edit, :update, :destroy]
+  resources :schools, only: [:index, :show]
   
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
