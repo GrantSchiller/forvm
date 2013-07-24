@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     if authentication
       user = authentication.user
       
-      session[:user_id] = user.id
+      sign_in user
       
       flash[:notice] = "Logged in!"
       redirect_to root_url
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
       user = User.create(name: auth['info']['name'], email: auth['info']['email'])
       user.authentications.create(provider: auth['provider'], uid: auth['uid'])
       
-      session[:user_id] = user.id
+      sign_in user
       
       # TODO: redirect to page to fill in user details
       flash[:notice] = "Account created, now fill in the rest of your details:"
@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    sign_out user
     
     flash[:notice] = "Signed out"
     redirect_to root_url
