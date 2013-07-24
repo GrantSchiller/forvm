@@ -48,6 +48,9 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.7)
       multipart-post (~> 1.1)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fuubar (1.1.1)
       rspec (~> 2.0)
       rspec-instafail (~> 0.2.0)
@@ -184,6 +187,7 @@ DEPENDENCIES
   annotate
   coffee-rails (~> 4.0.0)
   factory_girl_rails
+  figaro
   fuubar
   geocoder
   jbuilder (~> 1.2)

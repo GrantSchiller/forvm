@@ -12,6 +12,8 @@ group :development, :test do
   
   gem 'annotate'
   gem 'fuubar'
+  
+  gem 'figaro'
 end
 
 group :production do
