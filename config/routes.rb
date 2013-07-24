@@ -4,6 +4,7 @@ Forvm::Application.routes.draw do
   
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :schools, only: [:index, :show]
+  resources :cities, only: [:index, :show]
   
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe SchoolsController do
+describe CitiesController do
   
   before do
-    @school = FactoryGirl.create(:school)
+    @city = FactoryGirl.create(:city)
   end
   
   describe "GET 'index'" do
@@ -15,7 +15,7 @@ describe SchoolsController do
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show', :id => @school.id
+      get 'show', :id => @city.id
       response.should be_success
     end
   end
