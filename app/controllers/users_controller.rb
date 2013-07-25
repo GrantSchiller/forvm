@@ -4,14 +4,34 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+    
+    @schools = School.all.map do |s|
+      [s.name, s.id]
+    end
   end
 
   def update
-    redirect_to root_url
+    @user = User.find(params[:id])
+    
+    if @user.update_attributes(user_params)
+      @user.reload
+      flash[:success] = "Profile updated"
+      
+      redirect_to user_url(@user)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
     redirect_to root_url
   end
+  
+  private
+  
+    def user_params
+      params.require(:user).permit(:name, :email, :school_id, :city_id, :graduating_year)
+    end
   
 end
