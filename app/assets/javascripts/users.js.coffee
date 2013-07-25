@@ -1,3 +1,8 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+ready = ->
+	$("form .field input, form .field select").focus ->
+		$(this).parent().addClass("focus")
+	$("form .field input, form .field select").blur ->
+		$(this).parent().removeClass("focus")
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

@@ -28,6 +28,10 @@
 		}
 	}
 	
+	a:hover li {
+		background-color: $background;
+	}
+	
 	a:last-child {
 		margin-right: 0;
 	}

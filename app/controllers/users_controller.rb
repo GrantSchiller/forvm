@@ -6,8 +6,17 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     
+    @cities = City.all.map do |c|
+      [c.name, c.id]
+    end
+    
     @schools = School.all.map do |s|
       [s.name, s.id]
+    end
+    
+    @years = 5.times.map do |n|
+      y = Time.now.year
+      y + n
     end
   end
 

@@ -1,3 +1,65 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
+
+$gray: #eee;
+
+p.field {
+	padding: 10px 10px 10px 0;
+	font-size: 12px;
+	
+	label {
+		width: 140px;
+		float: left;
+		display: block;
+		vertical-align: middle;
+		text-align: right;
+		font-weight: bold;
+		margin-top: 11px;
+	}
+	
+	label.select_label {
+		margin-top: 7px;
+	}
+	
+	input, select	 {
+		float: right;
+		margin: 0;
+		padding: 10px;
+	}
+	
+	input {
+		border: 0;
+		font-size: 12px;
+		width: 508px;
+		padding: 10px;
+		border: 1px solid $background;
+		background-color: $off_white;
+	}
+	
+	select {
+		background-color: $off_white;
+		height: 35px;
+		font-size: 12px;
+		height: 30px;
+		width: 530px;
+		border: 1px solid $background;
+		border-radius: 0;
+	}
+}
+
+p.field.focus {
+	background: $color;
+}
+
+input.submit {
+	margin: 10px 0 0 160px;
+	padding: 10px;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: $deep_alternate;
+	color: $off_white;
+	border: 0;
+}
+
+input.submit:hover {
+	background-color: $background;
+}

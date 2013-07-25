@@ -54,7 +54,7 @@ img, object, embed {
 $width: 960px;
 
 body {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
 	background-color: $off_white;
 }
 
@@ -75,6 +75,7 @@ a, a:visited {
 	h1 {
 		font-weight: bold;
 		font-size: 36px;
+		line-height: 42px;
 		color: $dark_gray;
 		padding-bottom: 18px;
 		margin-bottom: 20px;
