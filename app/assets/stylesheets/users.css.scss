@@ -23,7 +23,6 @@ p.field {
 	input, select	 {
 		float: right;
 		margin: 0;
-		padding: 10px;
 	}
 	
 	input {
@@ -37,6 +36,7 @@ p.field {
 	
 	select {
 		background-color: $off_white;
+		padding-top: 5px;
 		height: 35px;
 		font-size: 12px;
 		height: 30px;
