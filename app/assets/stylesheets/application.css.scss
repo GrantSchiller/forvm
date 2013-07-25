@@ -48,9 +48,8 @@ img, object, embed {
 	max-width: 100%;
 }
 
-body {
-	font-family: Helvetica, Arial, sans-serif;
-}
+$off_white: #f8f8f8;
+$dark_gray: #434343;
 
 $color: #70F0EE;
 $deep: #4580BD;
@@ -58,13 +57,46 @@ $background: #78818A;
 $alternate: #F2BCAD;
 $deep_alternate: #BD4E45;
 
+$width: 960px;
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: $off_white;
+}
+
+#main {
+	width: $width - 20;
+	margin: 0 auto;
+	padding: 30px 10px;
+}
+
+#content {
+	width: 700px;
+	float: left;
+	
+	h1 {
+		font-weight: bold;
+		font-size: 36px;
+		color: $dark_gray;
+		padding-bottom: 18px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $dark_gray;
+	}
+}
+
+#sidebar {
+	width: 220px;
+	float: right;
+}
+
 #navigation {
 //	height: 40px;
 	padding: 14px 0;
 	background-color: $background;
 	
 	div {
-		width: 50%;
+		width: $width - 20;
+		padding: 0 10px;
 		margin: 0 auto;
 		
 		h1 {
@@ -74,12 +106,12 @@ $deep_alternate: #BD4E45;
 				color: $color;
 			}
 			a:hover, a:visited:hover {
-				color: #fff;
+				color: $off_white;
 			}
 		}
 		
 		a, a:visited {
-			color: #fff;
+			color: $off_white;
 			text-decoration: none;
 			font-size: 12px;
 		}
