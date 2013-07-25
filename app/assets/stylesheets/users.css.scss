@@ -2,7 +2,7 @@
 
 $gray: #eee;
 
-p.field {
+div.field {
 	padding: 10px 10px 10px 0;
 	font-size: 12px;
 	
@@ -46,7 +46,19 @@ p.field {
 	}
 }
 
-p.field.focus {
+#school-request {
+	font-size: 12px;
+	width: 540px;
+	clear: both;
+	margin: 40px 0 5px 160px;
+	
+	a {
+		color: $deep;
+		font-weight: bold;
+	}
+}
+
+div.field.focus {
 	background: $color;
 }
 

@@ -1,25 +1,26 @@
 <h1>Edit Your Profile</h1>
 
 <%= form_for(@user) do |f| %>
-	<p class="field group">
+	<div class="field group">
 		<%= f.label :name, class: "required" %>
 		<%= f.text_field :name %>
-	</p>
-	<p class="field group">
+	</div>
+	<div class="field group">
 		<%= f.label :email %>
 		<%= f.text_field :email %>
-	</p>
-	<p class="field group">
+	</div>
+	<div class="field group">
 		<%= f.label :city_id, "City", class: "select_label" %>
 		<%= f.select :city_id, @cities, include_blank: "None" %>
-	</p>
-	<p class="field group">
+	</div>
+	<div class="field group">
 		<%= f.label :school_id, "School", class: "select_label" %>
 		<%= f.select :school_id, @schools, include_blank: "None" %>
-	</p>
-	<p class="field group">
+		<p id="school-request">Don't see your school listed? <a href="#">Request your school.</a></p>
+	</div>
+	<div class="field group">
 		<%= f.label :graduating_year, class: "select_label" %>
 		<%= f.select :graduating_year, @years, include_blank: "None" %>
-	</p>
+	</div>
 	<%= f.submit "Update", class: "submit" %>
 <% end %>
