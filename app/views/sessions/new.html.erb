@@ -1,9 +1,9 @@
 <h1>Log in with one of these services:</h1>
 
-<ul>
-	<% unless Rails.env.production? %><li><a href="/auth/developer">Developer</a></li><% end %>
-	<li><a href="/auth/twitter">Twitter</a></li>
-	<li><a href="/auth/facebook">Facebook</a></li>
-	<li><a href="/auth/google_oauth2">Google</a></li>
-	<li><a href="/auth/github">Github</a></li>
+<% unless Rails.env.production? %><p><a href="/auth/developer">Developer</a></p><% end %>
+
+<ul id="login-options" class="group">
+	<a href="/auth/google_oauth2"><li class="group"><%= image_tag "google.png", :size => "64x64" %><p>Google</p></li></a>
+	<a href="/auth/facebook"><li class="group"><%= image_tag "facebook.png", :size => "64x64" %><p>Facebook</p></li></a>
+	<a href="/auth/github"><li class="group"><%= image_tag "github.png", :size => "64x64" %><p>Github</p></li></a>
 </ul>

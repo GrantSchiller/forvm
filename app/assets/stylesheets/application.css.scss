@@ -48,20 +48,17 @@ img, object, embed {
 	max-width: 100%;
 }
 
-$off_white: #f8f8f8;
-$dark_gray: #434343;
-
-$color: #70F0EE;
-$deep: #4580BD;
-$background: #78818A;
-$alternate: #F2BCAD;
-$deep_alternate: #BD4E45;
+@import "colors";
 
 $width: 960px;
 
 body {
 	font-family: Helvetica, Arial, sans-serif;
 	background-color: $off_white;
+}
+
+a, a:visited {
+	text-decoration: none;
 }
 
 #main {
@@ -111,9 +108,8 @@ body {
 		}
 		
 		a, a:visited {
+			font-size: 14px;
 			color: $off_white;
-			text-decoration: none;
-			font-size: 12px;
 		}
 		
 		a:hover, a:visited:hover {
