@@ -62,6 +62,23 @@ a, a:visited {
 	text-decoration: none;
 }
 
+.flash_success, .flash_notice {
+	width: 100%;
+	padding: 15px 0;
+	text-align: center;
+	margin-bottom: 20px;
+	font-weight: bold;
+	color: white;
+}
+
+.flash_notice {
+	background-color: $deep;
+}
+
+.flash_success {
+	background-color: $green;
+}
+
 #main {
 	width: $width - 20;
 	margin: 0 auto;

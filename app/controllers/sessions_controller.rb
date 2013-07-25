@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
       
       sign_in user
       
-      flash[:notice] = "Account created, now fill in the rest of your details:"
+      flash[:success] = "Registered!"
       redirect_to edit_user_url(user)
     end
   end

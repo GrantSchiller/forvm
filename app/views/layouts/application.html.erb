@@ -26,9 +26,16 @@
 </header>
 
 <div id="main" class="group">
-	<div id="content">
+	
+	<% if flash[:success] %>
+		<p class="flash_success"><%= flash[:success] %></p>
+	<% elsif flash[:notice] %>
+		<p class="flash_notice"><%= flash[:notice] %></p>
+	<% end %>
+	
+	<main id="content">
 		<%= yield %>
-	</div>
+	</main>
 	<aside id="sidebar">
 		<h1>Sidebar</h1>
 	</aside>
