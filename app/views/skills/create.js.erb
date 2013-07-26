@@ -1,0 +1,3 @@
+$("#user-skills").append('<%= j render(@skill) %>');
+$("#skill_id option[value='<%= @skill.id %>']").remove();
+displayNoSkills();

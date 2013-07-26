@@ -1,0 +1,3 @@
+$("#skill-<%= @skill.id %>").remove();
+$("#skill_id").append('<option value="<%= @skill.id %>"><%= @skill.name %></option>');
+displayNoSkills()

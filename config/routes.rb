@@ -2,7 +2,9 @@ Forvm::Application.routes.draw do
   
   root to: "pages#home"
   
-  resources :users, only: [:show, :edit, :update, :destroy]
+  resources :users, only: [:show, :edit, :update, :destroy] do
+    resources :skills, only: [:create, :destroy]
+  end
   resources :schools, only: [:index, :show]
   resources :cities, only: [:index, :show]
   

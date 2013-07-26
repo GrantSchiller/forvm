@@ -1,26 +1,52 @@
 <h1>Edit Your Profile</h1>
 
+<div class="field group">
+	<label>Skills</label>
+	<div class="input" id="skills_input">
+		<ul id="user-skills">
+			<%= render @user.skills %>
+		</ul>
+		<%= form_for [@user, @user.skills.new], remote: true, html: { class: "group" } do |f| %>
+			<%= f.select :id, @skills %>
+			<%= f.submit "+", class: "skill_submit" %>
+		<% end %>
+	</div>
+</div>
+
 <%= form_for(@user) do |f| %>
 	<div class="field group">
 		<%= f.label :name, class: "required" %>
-		<%= f.text_field :name %>
+		<div class="input">
+			<%= f.text_field :name %>
+		</div>
 	</div>
 	<div class="field group">
 		<%= f.label :email %>
-		<%= f.text_field :email %>
+		<div class="input">
+			<%= f.text_field :email %>
+		</div>
 	</div>
 	<div class="field group">
 		<%= f.label :city_id, "City", class: "select_label" %>
-		<%= f.select :city_id, @cities, include_blank: "None" %>
+		<div class="input">
+			<%= f.select :city_id, @cities, include_blank: "None" %>
+		</div>
 	</div>
 	<div class="field group">
 		<%= f.label :school_id, "School", class: "select_label" %>
-		<%= f.select :school_id, @schools, include_blank: "None" %>
-		<p id="school-request">Don't see your school listed? <a href="#">Request your school.</a></p>
+		<div class="input">
+			<%= f.select :school_id, @schools, include_blank: "None" %>
+			<p id="school-request">Don't see your school listed? <a href="#">Request your school.</a></p>
+		</div>
 	</div>
 	<div class="field group">
 		<%= f.label :graduating_year, class: "select_label" %>
-		<%= f.select :graduating_year, @years, include_blank: "None" %>
+		<div class="input">
+			<%= f.select :graduating_year, @years, include_blank: "None" %>
+		</div>
 	</div>
-	<%= f.submit "Update", class: "submit" %>
+	<div class="input">
+		<%= f.submit "Update", class: "submit" %>
+	</div>
 <% end %>
+

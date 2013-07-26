@@ -1,9 +1,22 @@
+root = exports ? this
+root.displayNoSkills = ->
+	if $("#user-skills li").size() == 0
+		$("#skills-message").show()
+	else
+		$("#skills-message").hide()
+
 ready = ->
-	displaySchoolRequest()
+	$("#skills_input").prepend('<p id="skills-message">Add some skills.</p>')
+	$("#skills-message").hide()
+	
+	root.displayNoSkills()
+	
 	$("form .field input, form .field select").focus ->
-		$(this).parent().addClass("focus")
+		$(this).parent().parent().addClass("focus")
 	$("form .field input, form .field select").blur ->
-		$(this).parent().removeClass("focus")
+		$(this).parent().parent().removeClass("focus")
+	
+	displaySchoolRequest()
 	$("#user_school_id").change -> displaySchoolRequest()
 
 displaySchoolRequest = ->

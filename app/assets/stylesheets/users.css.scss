@@ -6,6 +6,64 @@ div.field {
 	padding: 10px 10px 10px 0;
 	font-size: 12px;
 	
+	.input {
+		float: right;
+		width: 530px;
+		
+		p {
+			font-size: 12px;
+			clear: both;
+			margin: 10px 0 5px 0;
+
+			a {
+				color: $deep;
+				font-weight: bold;
+			}
+		}
+		
+		ul {
+			list-style-type: none;
+			
+			li {
+				padding: 10px 0;
+				border-bottom: 1px solid $background;
+				
+				a {
+					background-color: $deep_alternate;
+					color: $off_white;
+					padding: 2px 4px;
+					margin-left: 5px;
+					font-weight: bold;
+				}
+			}
+			li:last-child {
+				border: none;
+			}
+		}
+		
+		#new_skill {
+			border-top: 1px solid $background;
+			padding-top: 10px;
+			
+			#skill_id {
+				width: 450px;
+				float: right;
+			}
+
+			.skill_submit {
+				float: left;
+				width: 60px;
+				height: 30px;
+				background-color: $deep;
+				border: 0;
+				color: $off_white;
+				font-weight: bold;
+				font-size: 18px;
+				padding: 0;
+			}
+		}
+	}
+	
 	label {
 		width: 140px;
 		float: left;
@@ -20,8 +78,7 @@ div.field {
 		margin-top: 7px;
 	}
 	
-	input, select	 {
-		float: right;
+	input, select {
 		margin: 0;
 	}
 	
@@ -46,23 +103,12 @@ div.field {
 	}
 }
 
-#school-request {
-	font-size: 12px;
-	width: 540px;
-	clear: both;
-	margin: 40px 0 5px 160px;
-	
-	a {
-		color: $deep;
-		font-weight: bold;
-	}
-}
-
-div.field.focus {
+.field.focus {
 	background: $color;
 }
 
 input.submit {
+	margin-top: 10px;
 	margin: 10px 0 0 160px;
 	padding: 10px;
 	font-size: 12px;
