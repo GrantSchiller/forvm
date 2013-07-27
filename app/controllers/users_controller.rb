@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     
-    @skills = (Skill.all - @user.skills).map do |s|
+    @skills = Skill.all.map do |s|
       [s.name, s.id]
     end
     

@@ -11,6 +11,12 @@ ready = ->
 	
 	root.displayNoSkills()
 	
+	$("#user-skills li").each ->
+		arr = this.id.split("-")
+		id = arr[arr.length-1]
+		
+		$("#skill_id option[value=" + id + "]").remove();
+	
 	$("form .field input, form .field select").focus ->
 		$(this).parent().parent().addClass("focus")
 	$("form .field input, form .field select").blur ->

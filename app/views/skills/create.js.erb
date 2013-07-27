@@ -1,3 +1,5 @@
-$("#user-skills").append('<%= j render(@skill) %>');
-$("#skill_id option[value='<%= @skill.id %>']").remove();
-displayNoSkills();
+<% if @created %>
+	$("#user-skills").append('<%= j render(@skill) %>');
+	$("#skill_id option[value='<%= @skill.id %>']").remove();
+	displayNoSkills();
+<% end %>

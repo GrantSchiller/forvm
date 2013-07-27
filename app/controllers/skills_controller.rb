@@ -4,7 +4,12 @@ class SkillsController < ApplicationController
     @user = User.find(params[:user_id])
     @skill = Skill.find(params[:skill][:id])
     
-    @user.skills << @skill
+    if @user.skills.include? @skill
+      @created = false
+    else
+      @created = true
+      @user.skills << @skill
+    end
   end
 
   def destroy
