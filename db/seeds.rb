@@ -11,3 +11,9 @@ while (name = file.gets)
     s.save
   end
 end
+
+skills = %w[ruby-on-rails ios html php django objective-c opengl]
+
+skills.each do |s|
+  Skill.find_or_create_by(name: s)
+end
